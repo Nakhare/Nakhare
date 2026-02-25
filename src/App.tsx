@@ -20,8 +20,8 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     name: "APOORVA",
     subtitle: "Tailored in Crimson Confidence.",
     price: 1299,
-    image: "https://picsum.photos/seed/model1/800/1000",
-    illustration: "https://picsum.photos/seed/illu1/800/1000",
+    image: "https://row.nishorama.com/cdn/shop/files/GeneratedImageFebruary10_2026-5_08PM.jpg?v=1770794025&width=832",
+    illustration: "https://row.nishorama.com/cdn/shop/files/GeneratedImageFebruary10_2026-5_11PM.jpg?v=1770794026&width=832",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"]
   },
   {
@@ -29,8 +29,8 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     name: "JOGI",
     subtitle: "Bohemian Rhapsody in Indigo.",
     price: 899,
-    image: "https://picsum.photos/seed/model2/800/1000",
-    illustration: "https://picsum.photos/seed/illu2/800/1000",
+    image: "https://row.nishorama.com/cdn/shop/files/DSC8643_340c00ee-12ea-4f79-a466-109b544aa89d.jpg?v=1765960913&width=832",
+    illustration: "https://row.nishorama.com/cdn/shop/files/DSC8672.jpg?v=1765960913&width=832",
     sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
