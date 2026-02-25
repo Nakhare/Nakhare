@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&family=Syne:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-punk: "Syne", sans-serif;
+
+  --color-brand-nude: #F5E6D3;
+  --color-brand-rust: #A0522D;
+  --color-brand-maroon: #800000;
+  --color-brand-olive: #5A5A40;
+  --color-brand-peach: #FFDAB9;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-nude text-black font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-tighter;
+  }
+}
+
+.punk-text {
+  font-family: var(--font-punk);
+  @apply font-extrabold uppercase italic;
+  transform: skewX(-10deg);
+}
+
+.glass-morphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-nude;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-rust rounded-full;
+}
