@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import FloralAccent from "./FloralAccent";
 
 const moods = [
   { name: "Floral", image: "https://picsum.photos/seed/floral/600/800", color: "bg-emerald-50" },
@@ -9,8 +10,12 @@ const moods = [
 
 export default function MoodSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Floral Accents */}
+      <FloralAccent className="absolute top-20 -right-10 text-brand-rust/10 w-48 h-48 rotate-12" />
+      <FloralAccent className="absolute bottom-20 -left-10 text-brand-maroon/10 w-32 h-32 -rotate-12" />
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div className="space-y-2">
             <h3 className="text-brand-rust text-sm font-bold tracking-[0.4em] uppercase">Find Your Vibe</h3>

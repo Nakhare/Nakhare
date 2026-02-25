@@ -1,10 +1,12 @@
 import { motion } from "motion/react";
 import { ShoppingBag, Search, User, Heart, Menu } from "lucide-react";
+import FloralAccent from "./FloralAccent";
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-brand-nude/80 backdrop-blur-md border-b border-black/5">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between relative">
+        <FloralAccent className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 text-brand-maroon/10 md:hidden" />
         <div className="flex items-center gap-8">
           <button className="md:hidden p-2">
             <Menu size={24} />

@@ -1,9 +1,31 @@
-import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import FloralAccent from "./FloralAccent";
+
+const HERO_IMAGES = [
+  "https://evara.me/cdn/shop/files/2_0539ccb9-099e-41bf-a826-fad1096ab301.webp?v=1769269845&width=1920",
+  "https://evara.me/cdn/shop/files/1_77a7f67d-0d99-47f8-af0d-173eb13f1540.webp?v=1769269844&width=1920"
+];
 
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextImage = () => setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
+  const prevImage = () => setCurrentImage((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
+
   return (
     <section className="relative h-screen min-h-[700px] w-full overflow-hidden flex items-center pt-20">
+      {/* Floral Accents */}
+      <FloralAccent className="absolute top-40 left-10 text-brand-rust/10 w-32 h-32" />
+      
       {/* Background Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">
         <motion.div 
@@ -67,33 +89,69 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative group">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative z-10 aspect-[2/3] md:aspect-[3/4.5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white"
+            className="relative z-10 aspect-[2/3] md:aspect-[3/4.5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-white"
           >
-            <img 
-              src="https://evara.me/cdn/shop/files/2_0539ccb9-099e-41bf-a826-fad1096ab301.webp?v=1769269845&width=1920" 
-              alt="NAKHARE Model" 
-              className="w-full h-full object-cover object-top"
-              referrerPolicy="no-referrer"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img 
+                key={currentImage}
+                src={HERO_IMAGES[currentImage]} 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                alt="NAKHARE Model" 
+                className="w-full h-full object-cover object-top"
+                referrerPolicy="no-referrer"
+              />
+            </AnimatePresence>
+
+            {/* Slider Controls */}
+            <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+              <button 
+                onClick={prevImage}
+                className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors shadow-lg"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={nextImage}
+                className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors shadow-lg"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              {HERO_IMAGES.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImage(idx)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentImage === idx ? "w-8 bg-brand-maroon" : "bg-black/20 hover:bg-black/40"
+                  }`}
+                />
+              ))}
+            </div>
           </motion.div>
           
           {/* Decorative Elements */}
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -top-12 -right-12 w-48 h-48 border-2 border-dashed border-brand-maroon/30 rounded-full flex items-center justify-center p-8"
+            className="absolute -top-12 -right-12 w-48 h-48 border-2 border-dashed border-brand-maroon/30 rounded-full flex items-center justify-center p-8 pointer-events-none"
           >
             <div className="text-[10px] font-bold text-center uppercase tracking-widest text-brand-maroon/50">
               Handcrafted in India • Premium Quality • Bold Designs •
             </div>
           </motion.div>
 
-          <div className="absolute -bottom-8 -left-8 z-20 bg-brand-peach p-6 shadow-xl rounded-xl border border-black/5 max-w-[200px]">
+          <div className="absolute -bottom-8 -left-8 z-20 bg-brand-peach p-6 shadow-xl rounded-xl border border-black/5 max-w-[200px] pointer-events-none">
             <p className="text-xs font-bold italic leading-tight">
               "Finally, a brand that gets my vibe and my size!"
             </p>
