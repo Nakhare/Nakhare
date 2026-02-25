@@ -36,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl font-medium max-w-md text-black/70 leading-relaxed"
+            className="text-base md:text-lg font-classy font-semibold tracking-tight text-brand-maroon max-w-md leading-relaxed"
           >
             Expressive, stylish, and unapologetically you. Our short kurtis are designed for the bold Gen-Z soul.
           </motion.p>
@@ -72,12 +72,12 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative z-10 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-8 border-white"
+            className="relative z-10 aspect-[2/3] md:aspect-[3/4.5] rounded-2xl overflow-hidden shadow-2xl border-8 border-white"
           >
             <img 
-              src="https://picsum.photos/seed/nakhare-hero/800/1200" 
+              src="https://evara.me/cdn/shop/files/2_0539ccb9-099e-41bf-a826-fad1096ab301.webp?v=1769269845&width=1920" 
               alt="NAKHARE Model" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
               referrerPolicy="no-referrer"
             />
           </motion.div>

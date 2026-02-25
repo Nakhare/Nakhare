@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;600;700&family=Syne:wght@700;800&family=Outfit:wght@400;600;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Anton", sans-serif;
   --font-punk: "Syne", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-classy: "Outfit", sans-serif;
 
   --color-brand-nude: #F5E6D3;
   --color-brand-rust: #A0522D;

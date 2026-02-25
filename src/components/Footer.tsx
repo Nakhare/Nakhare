@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex flex-col">
               <span className="text-4xl font-display tracking-tighter">NAKHARE</span>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase opacity-60">Short Kurti. Big Nakhare.</span>
+              <span className="text-[8px] font-bold tracking-[0.3em] uppercase opacity-60">Short Kurti Big Nakhare</span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
               Redefining Indian ethnic wear for the modern, bold, and unapologetic woman. Inclusive sizing, exclusive designs.

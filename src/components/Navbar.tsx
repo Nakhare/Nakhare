@@ -17,8 +17,13 @@ export default function Navbar() {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-          <span className="text-2xl md:text-3xl font-display tracking-tighter leading-none">NAKHARE</span>
-          <span className="text-[8px] font-bold tracking-[0.3em] uppercase opacity-60">Short Kurti. Big Nakhare.</span>
+          <div className="flex items-center gap-2">
+            <div className="h-10 w-10 bg-black rounded-full flex items-center justify-center text-white font-display text-xs">N</div>
+            <div className="flex flex-col items-center">
+              <span className="text-xl md:text-2xl font-display tracking-tighter leading-none">NAKHARE</span>
+              <span className="text-[8px] font-bold tracking-[0.2em] uppercase opacity-60">kurti</span>
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center gap-4">
