@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import FloralAccent from "./FloralAccent";
 
 const moods = [
-  { name: "Floral", image: "https://picsum.photos/seed/floral/600/800", color: "bg-emerald-50" },
-  { name: "Tevar Mode", image: "https://picsum.photos/seed/tevar/600/800", color: "bg-brand-maroon/5" },
-  { name: "Everyday Cute", image: "https://picsum.photos/seed/cute/600/800", color: "bg-brand-peach/20" },
-  { name: "Festive Pop", image: "https://picsum.photos/seed/festive/600/800", color: "bg-brand-rust/5" },
+  { name: "Floral", image: "https://i.pinimg.com/736x/45/6c/b1/456cb154fcf4d77b960943424bdae022.jpg", color: "bg-emerald-50" },
+  { name: "Tevar Mode", image: "https://row.nishorama.com/cdn/shop/files/P1003849.jpg?v=1765960894&width=832", color: "bg-brand-maroon/5" },
+  { name: "Everyday Cute", image: "https://evara.me/cdn/shop/files/13_6a54b246-6d99-4bb1-b724-223714e74db6_785x.webp?v=1768381922", color: "bg-brand-peach/20" },
+  { name: "Festive Pop", image: "https://row.nishorama.com/cdn/shop/files/ADK04567_3-4_7ca10d07-df17-40a6-9966-c8d6e0d71049.jpg?v=1765960679&width=832", color: "bg-brand-rust/5" },
 ];
 
 export default function MoodSection() {
