@@ -38,8 +38,8 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     name: "MAGAN",
     subtitle: "Earthy Tones for the Soul.",
     price: 1199,
-    image: "https://picsum.photos/seed/model3/800/1000",
-    illustration: "https://picsum.photos/seed/illu3/800/1000",
+    image: "https://row.nishorama.com/cdn/shop/files/hans3.jpg?v=1765960918&width=832",
+    illustration: "https://row.nishorama.com/cdn/shop/files/IMG_4947.jpg?v=1765960855&width=832",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"]
   },
   {
@@ -47,8 +47,8 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     name: "GUL",
     subtitle: "Floral Whispers in Cotton.",
     price: 749,
-    image: "https://picsum.photos/seed/model4/800/1000",
-    illustration: "https://picsum.photos/seed/illu4/800/1000",
+    image: "https://picsum.photos/seed/gul-floral-1/800/1000",
+    illustration: "https://picsum.photos/seed/gul-floral-2/800/1000",
     sizes: ["M", "L", "XL", "XXL", "XXXL"]
   }
 ];
