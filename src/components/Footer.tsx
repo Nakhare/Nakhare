@@ -1,16 +1,29 @@
 import FloralAccent from "./FloralAccent";
+import DotGrid from "./DotGrid";
 
-export default function Footer() {
+export default function Footer({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <footer className="bg-brand-peach/20 text-black pt-24 pb-12 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="grid grid-cols-12 h-full">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="border-r border-black h-full" />
+          ))}
+        </div>
+      </div>
+
       {/* Floral Accents */}
       <FloralAccent className="absolute -top-10 -left-10 text-brand-rust/20 w-40 h-40" />
       <FloralAccent className="absolute -bottom-10 -right-10 text-brand-maroon/10 w-60 h-60 rotate-45" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
-            <div className="flex flex-col group cursor-pointer">
+          <div className="space-y-6 relative group">
+            <div className="absolute -top-4 -left-4 z-0 opacity-10 group-hover:opacity-20 transition-opacity">
+              <DotGrid rows={6} cols={6} gap={10} dotSize={2} />
+            </div>
+            <div className="flex flex-col group cursor-pointer relative z-10" onClick={() => onNavigate?.("home")}>
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 border border-brand-maroon rounded-full flex items-center justify-center text-brand-maroon font-display text-xs group-hover:bg-brand-maroon group-hover:text-white transition-all duration-300">N</div>
                 <span className="text-4xl font-display tracking-tighter text-brand-maroon">NAKHARE</span>
@@ -25,10 +38,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-display mb-6 text-brand-maroon">Quick Links</h4>
             <ul className="space-y-4 text-sm text-black/60 font-classy">
-              <li><a href="#" className="hover:text-brand-rust transition-colors">Shop All</a></li>
-              <li><a href="#" className="hover:text-brand-rust transition-colors">New Arrivals</a></li>
-              <li><a href="#" className="hover:text-brand-rust transition-colors">Size Guide</a></li>
-              <li><a href="#" className="hover:text-brand-rust transition-colors">Our Story</a></li>
+              <li><button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">Shop All</button></li>
+              <li><button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">New Arrivals</button></li>
+              <li><button className="hover:text-brand-maroon transition-colors">Size Guide</button></li>
+              <li><button className="hover:text-brand-maroon transition-colors">Our Story</button></li>
             </ul>
           </div>
 

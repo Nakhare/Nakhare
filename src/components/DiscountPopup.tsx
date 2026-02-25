@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { X, Mail } from "lucide-react";
 import FloralAccent from "./FloralAccent";
+import GlareCard from "./GlareCard";
 
 export default function DiscountPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +54,7 @@ export default function DiscountPopup() {
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="hidden md:block relative h-full min-h-[400px]">
+          <GlareCard className="hidden md:block relative h-full min-h-[400px]">
             <img 
               src="https://shopmasakali.co/cdn/shop/files/1_21fb331c-cc84-4468-92be-61e17edbc3d4.jpg?v=1771586723" 
               alt="Discount" 
@@ -61,7 +62,7 @@ export default function DiscountPopup() {
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-brand-maroon/10" />
-          </div>
+          </GlareCard>
 
           <div className="p-8 md:p-10 flex flex-col justify-center text-center space-y-6 relative z-10">
             {!isSubmitted ? (

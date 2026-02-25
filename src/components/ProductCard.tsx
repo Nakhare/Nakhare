@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ShoppingBag, Heart } from "lucide-react";
+import GlareCard from "./GlareCard";
 
 export interface ProductProps {
   id: number;
@@ -30,8 +31,8 @@ export function ProductCard({ product }: { product: ProductProps; key?: React.Ke
         </p>
       </div>
 
-      {/* Split Visual Layout */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-white/50 rounded-xl border border-black/5">
+      {/* Split Visual Layout with Glare */}
+      <GlareCard className="relative aspect-[4/5] overflow-hidden bg-white/50 rounded-xl border border-black/5">
         <div className="flex h-full">
           {/* Real Model */}
           <div className="w-1/2 h-full relative overflow-hidden border-r border-black/5">
@@ -64,7 +65,7 @@ export function ProductCard({ product }: { product: ProductProps; key?: React.Ke
         </div>
 
         {/* Quick Add Overlay */}
-        <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent">
+        <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent z-20">
           <div className="flex gap-2">
             <button className="flex-1 bg-white text-black py-2 text-xs font-bold uppercase tracking-widest hover:bg-brand-peach transition-colors flex items-center justify-center gap-2">
               <ShoppingBag size={14} /> Add to Cart
@@ -74,7 +75,7 @@ export function ProductCard({ product }: { product: ProductProps; key?: React.Ke
             </button>
           </div>
         </div>
-      </div>
+      </GlareCard>
 
       {/* Price and Sizes Below */}
       <div className="mt-4 flex justify-between items-end">

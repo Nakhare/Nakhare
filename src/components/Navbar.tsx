@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ShoppingBag, Search, User, Heart, Menu } from "lucide-react";
 import FloralAccent from "./FloralAccent";
 
-export default function Navbar() {
+export default function Navbar({ onNavigate }: { onNavigate?: (page: string) => void }) {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-brand-nude/80 backdrop-blur-md border-b border-black/5">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between relative">
@@ -12,13 +12,16 @@ export default function Navbar() {
             <Menu size={24} />
           </button>
           <div className="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest">
-            <a href="#" className="hover:text-brand-maroon transition-colors">Shop All</a>
-            <a href="#" className="hover:text-brand-maroon transition-colors">New Drops</a>
-            <a href="#" className="hover:text-brand-maroon transition-colors">Best Sellers</a>
+            <button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">Shop All</button>
+            <button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">New Drops</button>
+            <button className="hover:text-brand-maroon transition-colors">Best Sellers</button>
           </div>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+        <div 
+          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer"
+          onClick={() => onNavigate?.("home")}
+        >
           <div className="flex items-center gap-3">
             <div className="relative">
               <FloralAccent className="absolute -top-4 -left-4 w-8 h-8 text-brand-maroon/20 group-hover:rotate-45 transition-transform duration-700" />

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import FloralAccent from "./FloralAccent";
+import GlareCard from "./GlareCard";
 
 const moods = [
   { name: "Floral", image: "https://i.pinimg.com/736x/45/6c/b1/456cb154fcf4d77b960943424bdae022.jpg", color: "bg-emerald-50" },
@@ -28,12 +29,8 @@ export default function MoodSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {moods.map((mood, index) => (
-            <motion.div
+            <GlareCard
               key={mood.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
               className={`group relative aspect-[3/4] overflow-hidden rounded-2xl cursor-pointer ${mood.color}`}
             >
               <img 
@@ -42,9 +39,9 @@ export default function MoodSection() {
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-20">
                 <h4 className="text-4xl font-display text-white drop-shadow-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   {mood.name}
                 </h4>
@@ -52,7 +49,7 @@ export default function MoodSection() {
                   Explore Collection
                 </div>
               </div>
-            </motion.div>
+            </GlareCard>
           ))}
         </div>
       </div>
