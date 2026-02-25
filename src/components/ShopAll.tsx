@@ -61,7 +61,7 @@ const ALL_PRODUCTS: ProductProps[] = [
   }
 ];
 
-export default function ShopAll() {
+export default function ShopAll({ onAddToCart }: { onAddToCart?: () => void }) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
@@ -78,25 +78,28 @@ export default function ShopAll() {
           </div>
           
           <div className="flex items-center gap-4">
-            <button 
+            <motion.button 
+              whileTap={{ scale: 0.95 }}
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               className="flex items-center gap-2 px-6 py-3 border border-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all"
             >
               <Filter size={16} /> Filter & Sort
-            </button>
+            </motion.button>
             <div className="hidden md:flex border border-black">
-              <button 
+              <motion.button 
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setViewMode("grid")}
                 className={`p-3 ${viewMode === "grid" ? "bg-black text-white" : "bg-transparent text-black"}`}
               >
                 <Grid size={18} />
-              </button>
-              <button 
+              </motion.button>
+              <motion.button 
+                whileTap={{ scale: 0.9 }}
                 onClick={() => setViewMode("list")}
                 className={`p-3 ${viewMode === "list" ? "bg-black text-white" : "bg-transparent text-black"}`}
               >
                 <List size={18} />
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -150,7 +153,7 @@ export default function ShopAll() {
           <div className="flex-1">
             <div className={`grid ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3" : "grid-cols-1"} gap-x-8 gap-y-16`}>
               {ALL_PRODUCTS.map(product => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
               ))}
             </div>
           </div>

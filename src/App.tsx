@@ -60,6 +60,11 @@ const TRENDING_PRODUCTS: ProductProps[] = [
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState<"home" | "shop">("home");
+  const [cartCount, setCartCount] = useState(0);
+
+  const addToCart = () => {
+    setCartCount(prev => prev + 1);
+  };
 
   useEffect(() => {
     if (currentPage === "shop") {
@@ -81,7 +86,7 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <Navbar onNavigate={(page) => setCurrentPage(page as any)} />
+          <Navbar onNavigate={(page) => setCurrentPage(page as any)} cartCount={cartCount} />
           <DiscountPopup />
           
           <main>
@@ -110,7 +115,7 @@ export default function App() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
                       {TRENDING_PRODUCTS.map(product => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
                       ))}
                     </div>
                   </div>
@@ -172,7 +177,7 @@ export default function App() {
                 <SocialSection />
               </>
             ) : (
-              <ShopAll />
+              <ShopAll onAddToCart={addToCart} />
             )}
           </main>
 

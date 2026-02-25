@@ -11,11 +11,8 @@ export default function DiscountPopup() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const hasSeen = localStorage.getItem("nakhare_popup_seen");
-      if (!hasSeen) {
-        setIsOpen(true);
-      }
-    }, 0); // Show immediately on landing
+      setIsOpen(true);
+    }, 1000); // Show 1 second after landing for better impact
     return () => clearTimeout(timer);
   }, []);
 

@@ -13,7 +13,7 @@ export interface ProductProps {
   sizes: string[];
 }
 
-export function ProductCard({ product }: { product: ProductProps; key?: React.Key }) {
+export function ProductCard({ product, onAddToCart }: { product: ProductProps; onAddToCart?: () => void; key?: React.Key }) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -67,12 +67,19 @@ export function ProductCard({ product }: { product: ProductProps; key?: React.Ke
         {/* Quick Add Overlay */}
         <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/80 to-transparent z-20">
           <div className="flex gap-2">
-            <button className="flex-1 bg-white text-black py-2 text-xs font-bold uppercase tracking-widest hover:bg-brand-peach transition-colors flex items-center justify-center gap-2">
+            <motion.button 
+              whileTap={{ scale: 0.95 }}
+              onClick={onAddToCart}
+              className="flex-1 bg-white text-black py-2 text-xs font-bold uppercase tracking-widest hover:bg-brand-peach transition-colors flex items-center justify-center gap-2"
+            >
               <ShoppingBag size={14} /> Add to Cart
-            </button>
-            <button className="p-2 bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-black transition-colors">
+            </motion.button>
+            <motion.button 
+              whileTap={{ scale: 0.9 }}
+              className="p-2 bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-black transition-colors"
+            >
               <Heart size={16} />
-            </button>
+            </motion.button>
           </div>
         </div>
       </GlareCard>

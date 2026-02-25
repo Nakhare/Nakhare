@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import FloralAccent from "./FloralAccent";
 import DotGrid from "./DotGrid";
 
@@ -38,10 +39,10 @@ export default function Footer({ onNavigate }: { onNavigate?: (page: string) => 
           <div>
             <h4 className="text-lg font-display mb-6 text-brand-maroon">Quick Links</h4>
             <ul className="space-y-4 text-sm text-black/60 font-classy">
-              <li><button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">Shop All</button></li>
-              <li><button onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">New Arrivals</button></li>
-              <li><button className="hover:text-brand-maroon transition-colors">Size Guide</button></li>
-              <li><button className="hover:text-brand-maroon transition-colors">Our Story</button></li>
+              <li><motion.button whileHover={{ x: 5, color: "#800000" }} whileTap={{ scale: 0.95 }} onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">Shop All</motion.button></li>
+              <li><motion.button whileHover={{ x: 5, color: "#800000" }} whileTap={{ scale: 0.95 }} onClick={() => onNavigate?.("shop")} className="hover:text-brand-maroon transition-colors">New Arrivals</motion.button></li>
+              <li><motion.button whileHover={{ x: 5, color: "#800000" }} whileTap={{ scale: 0.95 }} className="hover:text-brand-maroon transition-colors">Size Guide</motion.button></li>
+              <li><motion.button whileHover={{ x: 5, color: "#800000" }} whileTap={{ scale: 0.95 }} className="hover:text-brand-maroon transition-colors">Our Story</motion.button></li>
             </ul>
           </div>
 
