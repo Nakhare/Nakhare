@@ -14,6 +14,8 @@ import DiscountPopup from "./components/DiscountPopup";
 import SocialSection from "./components/SocialSection";
 import Footer from "./components/Footer";
 
+import FloralAccent from "./components/FloralAccent";
+
 const TRENDING_PRODUCTS: ProductProps[] = [
   {
     id: 1,
@@ -79,8 +81,9 @@ export default function App() {
             <MoodSection />
 
             {/* Trending Section */}
-            <section className="py-24 bg-brand-nude">
-              <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <section className="py-24 bg-brand-nude relative overflow-hidden">
+              <FloralAccent className="absolute top-10 right-10 text-brand-maroon/5 w-32 h-32" />
+              <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
                   <div className="space-y-2">
                     <h3 className="text-brand-maroon text-sm font-bold tracking-[0.4em] uppercase">Hot Right Now</h3>
@@ -117,6 +120,8 @@ export default function App() {
 
             {/* Size Inclusivity Section */}
             <section className="py-32 bg-brand-maroon text-white relative overflow-hidden">
+              <FloralAccent className="absolute -top-10 -left-10 text-brand-peach/10 w-48 h-48 rotate-45" />
+              <FloralAccent className="absolute -bottom-10 -right-10 text-brand-peach/10 w-40 h-40 -rotate-12" />
               <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                 <div className="grid grid-cols-6 h-full">
                   {[...Array(6)].map((_, i) => (

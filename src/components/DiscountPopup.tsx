@@ -55,12 +55,12 @@ export default function DiscountPopup() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="hidden md:block relative h-full min-h-[400px]">
             <img 
-              src="https://evara.me/cdn/shop/files/1_77a7f67d-0d99-47f8-af0d-173eb13f1540.webp?v=1769269844&width=1920" 
+              src="https://shopmasakali.co/cdn/shop/files/1_21fb331c-cc84-4468-92be-61e17edbc3d4.jpg?v=1771586723" 
               alt="Discount" 
               className="absolute inset-0 w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-brand-maroon/20" />
+            <div className="absolute inset-0 bg-brand-maroon/10" />
           </div>
 
           <div className="p-8 md:p-10 flex flex-col justify-center text-center space-y-6 relative z-10">

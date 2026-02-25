@@ -10,9 +10,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <div className="flex flex-col">
-              <span className="text-4xl font-display tracking-tighter text-brand-maroon">NAKHARE</span>
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase opacity-60">Short Kurti. Big Nakhare.</span>
+            <div className="flex flex-col group cursor-pointer">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 border border-brand-maroon rounded-full flex items-center justify-center text-brand-maroon font-display text-xs group-hover:bg-brand-maroon group-hover:text-white transition-all duration-300">N</div>
+                <span className="text-4xl font-display tracking-tighter text-brand-maroon">NAKHARE</span>
+              </div>
+              <span className="text-[9px] font-bold tracking-[0.4em] uppercase opacity-40 mt-1">Short Kurti. Big Nakhare.</span>
             </div>
             <p className="text-sm text-black/60 leading-relaxed font-classy">
               Redefining Indian ethnic wear for the modern, bold, and unapologetic woman. Inclusive sizing, exclusive designs.

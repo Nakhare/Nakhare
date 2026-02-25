@@ -25,6 +25,8 @@ export default function Hero() {
     <section className="relative h-screen min-h-[700px] w-full overflow-hidden flex items-center pt-20">
       {/* Floral Accents */}
       <FloralAccent className="absolute top-40 left-10 text-brand-rust/10 w-32 h-32" />
+      <FloralAccent className="absolute bottom-20 right-1/3 text-brand-maroon/5 w-24 h-24 rotate-45" />
+      <FloralAccent className="absolute top-20 right-10 text-brand-rust/5 w-16 h-16 -rotate-12" />
       
       {/* Background Text Overlay */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden select-none">

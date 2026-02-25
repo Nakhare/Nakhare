@@ -1,10 +1,13 @@
 import { motion } from "motion/react";
 import { Instagram, Star, Quote } from "lucide-react";
+import FloralAccent from "./FloralAccent";
 
 export default function SocialSection() {
   return (
-    <section className="py-24 bg-brand-nude/30">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="py-24 bg-brand-nude/30 relative overflow-hidden">
+      <FloralAccent className="absolute top-1/2 -right-10 text-brand-maroon/5 w-60 h-60 -translate-y-1/2" />
+      <FloralAccent className="absolute bottom-0 left-20 text-brand-rust/5 w-32 h-32" />
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           {/* Instagram Feed */}
           <div className="space-y-12">
