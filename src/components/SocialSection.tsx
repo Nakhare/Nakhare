@@ -20,22 +20,29 @@ export default function SocialSection() {
               <p className="text-lg text-black/60">Tag us in your fits to get featured. #BigNakhare</p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 0.95, rotate: i % 2 === 0 ? 2 : -2 }}
-                  className="aspect-square bg-white rounded-lg overflow-hidden shadow-md border border-black/5"
-                >
-                  <img 
-                    src={`https://picsum.photos/seed/insta-${i}/400/400`} 
-                    alt="Instagram post" 
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </motion.div>
-              ))}
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-black/5 bg-white group"
+            >
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                className="w-full h-full object-cover"
+              >
+                <source src="https://www.nishorama.com/cdn/shop/videos/c/vp/f4da63febc334507a179ffe422d215aa/f4da63febc334507a179ffe422d215aa.HD-1080p-7.2Mbps-38377035.mp4?v=0" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+              <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Live from the Feed</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* Reviews */}
