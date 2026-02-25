@@ -39,7 +39,7 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     subtitle: "Earthy Tones for the Soul.",
     price: 1199,
     image: "https://row.nishorama.com/cdn/shop/files/hans3.jpg?v=1765960918&width=832",
-    illustration: "https://row.nishorama.com/cdn/shop/files/IMG_4947.jpg?v=1765960855&width=832",
+    illustration: "https://www.nishorama.com/cdn/shop/files/hans1.jpg?format=webp&v=1768831737&width=1080",
     sizes: ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "XXXXL"]
   },
   {
@@ -47,8 +47,8 @@ const TRENDING_PRODUCTS: ProductProps[] = [
     name: "GUL",
     subtitle: "Floral Whispers in Cotton.",
     price: 749,
-    image: "https://picsum.photos/seed/gul-floral-1/800/1000",
-    illustration: "https://picsum.photos/seed/gul-floral-2/800/1000",
+    image: "https://evara.me/cdn/shop/files/1_30955224-c433-4752-ab5a-9159eb5f52b1.webp?v=1767721516",
+    illustration: "https://evara.me/cdn/shop/files/7_4ed47d9d-4ac4-4fce-943a-fcf32280be48.webp?v=1767721516",
     sizes: ["M", "L", "XL", "XXL", "XXXL"]
   }
 ];
