@@ -68,7 +68,7 @@ export default function DiscountPopup() {
               <>
                 <div className="space-y-2">
                   <h3 className="text-xs font-bold tracking-[0.3em] text-brand-maroon uppercase">Exclusive Offer</h3>
-                  <h2 className="text-5xl font-display leading-none">10% OFF</h2>
+                  <h2 className="text-5xl font-display leading-none">25% OFF</h2>
                   <p className="text-base font-classy font-semibold text-brand-maroon/80">On your first purchase</p>
                 </div>
 
@@ -114,10 +114,10 @@ export default function DiscountPopup() {
                 </div>
                 <div className="space-y-2">
                   <h2 className="text-3xl font-display">Check Your Inbox!</h2>
-                  <p className="text-sm font-classy text-black/60">Your 10% discount code is on its way. Happy shopping!</p>
+                  <p className="text-sm font-classy text-black/60">Your 25% discount code is on its way. Happy shopping!</p>
                 </div>
                 <div className="py-3 px-6 bg-white border-2 border-dashed border-brand-maroon rounded-xl inline-block">
-                  <span className="text-2xl font-display tracking-widest text-brand-maroon">WELCOME10</span>
+                  <span className="text-2xl font-display tracking-widest text-brand-maroon">WELCOME25</span>
                 </div>
               </motion.div>
             )}

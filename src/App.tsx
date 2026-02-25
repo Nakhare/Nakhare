@@ -12,6 +12,7 @@ import MoodSection from "./components/MoodSection";
 import { ProductCard, type ProductProps } from "./components/ProductCard";
 import DiscountPopup from "./components/DiscountPopup";
 import SocialSection from "./components/SocialSection";
+import ImageCarousel from "./components/ImageCarousel";
 import Footer from "./components/Footer";
 
 import FloralAccent from "./components/FloralAccent";
@@ -154,6 +155,7 @@ export default function App() {
               </div>
             </section>
 
+            <ImageCarousel />
             <SocialSection />
           </main>
 
