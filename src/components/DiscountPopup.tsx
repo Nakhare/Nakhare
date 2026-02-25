@@ -14,7 +14,7 @@ export default function DiscountPopup() {
       if (!hasSeen) {
         setIsOpen(true);
       }
-    }, 1500); // Show 1.5s after landing
+    }, 0); // Show immediately on landing
     return () => clearTimeout(timer);
   }, []);
 

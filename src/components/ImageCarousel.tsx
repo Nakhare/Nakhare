@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "https://evara.me/cdn/shop/files/2_0539ccb9-099e-41bf-a826-fad1096ab301.webp?v=1769269845&width=1920",
-  "https://evara.me/cdn/shop/files/3_a061ae62-5a62-4aff-a888-8992d4d74e64.webp?v=1769269844&width=1920"
+  "https://evara.me/cdn/shop/files/2_0539ccb9-099e-41bf-a826-fad1096ab301.webp?v=1769269845&width=1920", // Red banner
+  "https://evara.me/cdn/shop/files/3_a061ae62-5a62-4aff-a888-8992d4d74e64.webp?v=1769269844&width=1920", // Power of cordset
+  "https://evara.me/cdn/shop/files/1_77a7f67d-0d99-47f8-af0d-173eb13f1540.webp?v=1769269844&width=1920"  // Serving effortlessly ethnic slay
 ];
 
 export default function ImageCarousel() {

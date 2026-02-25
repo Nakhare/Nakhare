@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import TopSection from "./components/TopSection";
 import MoodSection from "./components/MoodSection";
 import { ProductCard, type ProductProps } from "./components/ProductCard";
 import DiscountPopup from "./components/DiscountPopup";
@@ -77,7 +77,7 @@ export default function App() {
           <DiscountPopup />
           
           <main>
-            <Hero />
+            <TopSection />
             
             <MoodSection />
 
